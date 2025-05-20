@@ -1,0 +1,51 @@
+$font-stack: "Albert Sans", sans-serif;
+$primary-color: #047aed;
+$secondary-color: #1c3fa8;
+$dark-color: #002240;
+$light-color: #f4f4f4;
+$success-color: #5cb85c;
+$error-color: #d9534f;
+
+// Background Colors
+@mixin bg-colors(
+  $bg: "$primary-color" "$secondary-color" "$dark-color" "$light-color"
+) {
+  background-color: $bg;
+}
+
+.bg-primary {
+  @include bg-colors($primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  @include bg-colors($secondary-color);
+  color: #fff;
+}
+.bg-dark {
+  @include bg-colors($dark-color);
+  color: #fff;
+}
+.bg-light {
+  @include bg-colors($light-color);
+  color: #333;
+}
+
+.bg-primary a,
+.bg-secondary a,
+.bg-dark a {
+  color: #fff;
+}
+
+// Text-Colors
+@mixin text-color($color: $primary-color $secondary-color) {
+  color: $color;
+}
+
+.text-primary {
+  @include text-color($primary-color);
+}
+
+.text-secondary {
+  @include text-color($secondary-color);
+}

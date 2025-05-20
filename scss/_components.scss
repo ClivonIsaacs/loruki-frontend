@@ -1,0 +1,81 @@
+// Buttons
+@mixin button($bg: $primary-color $secondary-color $dark-color, $color: #fff) {
+  display: inline-block;
+  background: transparent;
+  border-radius: 5px;
+  color: $color;
+  background-color: $bg;
+  cursor: pointer;
+  border: 0;
+  padding: 0.6rem 1.8rem;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.btn {
+  @include button;
+
+  &-primary {
+    @include button($primary-color);
+  }
+
+  &-secondary {
+    @include button($secondary-color);
+  }
+
+  &-dark {
+    @include button($dark-color);
+  }
+
+  &-outline {
+    @include button($primary-color);
+    background: transparent;
+    border: 1px solid #fff;
+  }
+}
+
+// Card
+@mixin card {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #333;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  @include card;
+
+  &-light {
+    @include card;
+    background-color: $light-color;
+  }
+}
+
+// Alerts
+@mixin alert($bg: "$success-color" "$error-color", $color: #fff) {
+  background-color: $bg;
+  color: $color;
+  margin: 15px 0;
+  padding: 10px 20px;
+  font-weight: bolder;
+}
+
+.alert {
+  @include alert;
+
+  > i {
+    margin-right: 10px;
+  }
+
+  &-success {
+    @include alert($success-color);
+  }
+
+  &-error {
+    @include alert($error-color);
+  }
+}
